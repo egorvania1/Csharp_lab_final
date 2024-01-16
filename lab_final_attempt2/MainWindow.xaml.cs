@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,6 +19,8 @@ namespace lab_final_attempt2
     /// </summary>
     public class PointCollection
     {
+        public List<Point> Products { get; set; }
+
         private List<Point> points;
         public List<Point> Points
         {
@@ -46,6 +49,7 @@ namespace lab_final_attempt2
         {
             InitializeComponent();
         }
+
 
     }
 
