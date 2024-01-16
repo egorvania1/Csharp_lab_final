@@ -4,10 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab_final_attempt2"
-        xmlns:leftPanel="clr-namespace:lab_final_attempt2.View.UserControls.LeftPanel"
         xmlns:userControls="clr-namespace:lab_final_attempt2.View.UserControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
+    <Window.Resources>
+        <ObjectDataProvider x:Key="pointsProvider"
+            ObjectType="{x:Type local:PointCollection}" MethodName="GetPoints" />
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width=".2*"/>
@@ -15,14 +20,7 @@
         </Grid.ColumnDefinitions>
         
         <!-- Левая колонка -->
-        <Grid Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <leftPanel:PointsList/>
-            <leftPanel:PointInfo Grid.Row="1"/>
-        </Grid>
+        <userControls:LeftPanel/>
 
         <!-- Правая колонка -->
         <Grid Grid.Column="1">

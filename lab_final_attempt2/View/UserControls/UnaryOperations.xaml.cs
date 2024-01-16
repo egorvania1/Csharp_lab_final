@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +24,20 @@ namespace lab_final_attempt2.View.UserControls
         public UnaryOperations()
         {
             InitializeComponent();
+        }
+
+        private void PlusButton_Click(object sender, RoutedEventArgs e)
+        {
+            Point point = (Point)SelPoint.SelectedItem;
+            point++;
+            SelPoint.SelectedItem = point;
+        }
+
+        private void MinusButton_Click(object sender, RoutedEventArgs e)
+        {
+            Point point = (Point)SelPoint.SelectedItem;
+            point--;
+            SelPoint.SelectedItem = point;
         }
     }
 }

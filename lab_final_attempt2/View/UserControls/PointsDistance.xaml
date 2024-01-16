@@ -4,33 +4,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:lab_final_attempt2.View.UserControls"
+             xmlns:main="clr-namespace:lab_final_attempt2"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             d:DesignHeight="200" d:DesignWidth="400">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="pointsProvider"
+            ObjectType="{x:Type main:PointCollection}" MethodName="GetPoints" />
+    </UserControl.Resources>
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock TextAlignment="Center" Text="Расстояние между точками" />
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <ListBox>
-                <ListBoxItem Content="Point 1"/>
-                <ListBoxItem Content="Point 2"/>
-                <ListBoxItem Content="Point 3"/>
-                <ListBoxItem Content="Point 4"/>
-            </ListBox>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Button Width="100" Height="50" Content="Вычислить"/>
-                <TextBlock Text="Результат: " Grid.Row="1"/>
-            </Grid>
-        </Grid>
+        <TextBlock TextAlignment="Center" Text="Расстояние между точками" Grid.ColumnSpan="2"/>
+        <ListBox Name="SelPoint1" ItemsSource="{Binding Source={StaticResource pointsProvider}}" Grid.Row="1"/>
+        <ListBox Name="SelPoint2" ItemsSource="{Binding Source={StaticResource pointsProvider}}" Grid.Row="1" Grid.Column="2"/>
+        <Button Name="ResButton" Width="100" Height="50" Content="Вычислить" Grid.Row="2" Click="ResButton_Click"/>
+        <TextBlock Name="ResText" Text="Результат: " Grid.Row="2" Grid.Column="1"/>
     </Grid>
 </UserControl>

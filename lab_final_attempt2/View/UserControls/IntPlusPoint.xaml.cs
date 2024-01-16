@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +25,22 @@ namespace lab_final_attempt2.View.UserControls
         public IntPlusPoint()
         {
             InitializeComponent();
+        }
+
+        private void ResButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (SelPoint.SelectedItem != null)
+            {
+                Point point = (Point)SelPoint.SelectedItem;
+                int number = Convert.ToInt32(IntInput.Text);
+                point += number;
+                SelPoint.SelectedItem = point;
+                ResText.Text = "Результат: " + point;
+            }
+            else
+            {
+                ResText.Text = "Результат: Не выбрана точка";
+            }
         }
     }
 }

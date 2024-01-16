@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="lab_final_attempt2.View.UserControls.LeftPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:lab_final_attempt2.View.UserControls"
+             xmlns:main="clr-namespace:lab_final_attempt2"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="250">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="pointsProvider"
+        ObjectType="{x:Type main:PointCollection}" MethodName="GetPoints" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ListBox Name="SelPoint" ItemsSource="{Binding Source={StaticResource pointsProvider}}" SelectionChanged="SelPoint_SelectionChanged"/>
+        <Grid Background="White" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="xCoord" Grid.Row="0" Text="{Binding X}"/>
+            <TextBlock x:Name="yCoord" Grid.Row="1" Text="{Binding Y}"/>
+        </Grid>
+    </Grid>
+</UserControl>
