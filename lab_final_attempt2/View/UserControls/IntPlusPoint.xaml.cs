@@ -32,14 +32,33 @@ namespace lab_final_attempt2.View.UserControls
             if (SelPoint.SelectedItem != null)
             {
                 Point point = (Point)SelPoint.SelectedItem;
-                int number = Convert.ToInt32(IntInput.Text);
-                point += number;
-                SelPoint.SelectedItem = point;
-                ResText.Text = "Результат: " + point;
+                int number;
+                if (!int.TryParse(IntInput.Text, out number))
+                {
+                    ResText.Text = "Результат: Введён не int";
+                }
+                else
+                {
+                    point += number;
+                    SelPoint.SelectedItem = point;
+                    ResText.Text = "Результат: " + point;
+                }
             }
             else
             {
                 ResText.Text = "Результат: Не выбрана точка";
+            }
+        }
+
+        private void SelPoint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (SelPoint.SelectedItem != null)
+            {
+                ResButton.IsEnabled = true;
+            }
+            else
+            {
+                ResButton.IsEnabled = false;
             }
         }
     }

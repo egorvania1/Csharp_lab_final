@@ -16,14 +16,18 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ListBox Name="SelPoint" ItemsSource="{Binding Source={StaticResource pointsProvider}}" SelectionChanged="SelPoint_SelectionChanged"/>
-        <Grid Background="White" Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <TextBlock x:Name="xCoord" Grid.Row="0" Text="{Binding X}"/>
-            <TextBlock x:Name="yCoord" Grid.Row="1" Text="{Binding Y}"/>
-        </Grid>
+        <Border BorderBrush="Black" BorderThickness="2">
+            <ListBox Name="SelPoint" ItemsSource="{Binding Source={StaticResource pointsProvider}}" SelectionChanged="SelPoint_SelectionChanged"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="2" Grid.Row="1">
+            <Grid Background="White" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="xCoord" Grid.Row="0" Text="{Binding X}"/>
+                <TextBlock x:Name="yCoord" Grid.Row="1" Text="{Binding Y}"/>
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>

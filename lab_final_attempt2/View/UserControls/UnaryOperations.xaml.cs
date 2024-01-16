@@ -39,5 +39,19 @@ namespace lab_final_attempt2.View.UserControls
             point--;
             SelPoint.SelectedItem = point;
         }
+
+        private void SelPoint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (SelPoint.SelectedItem != null)
+            {
+                PlusButton.IsEnabled = true;
+                MinusButton.IsEnabled = true;
+            }
+            else
+            {
+                PlusButton.IsEnabled = false;
+                MinusButton.IsEnabled = false;
+            }
+        }
     }
 }

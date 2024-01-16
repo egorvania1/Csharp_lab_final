@@ -32,5 +32,17 @@ namespace lab_final_attempt2.View.UserControls
             double distance = point1.Distance(point2);
             ResText.Text = "Результат: " + distance;
         }
+
+        private void SelPoint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (SelPoint1.SelectedItem != null && SelPoint2.SelectedItem != null)
+            {
+                ResButton.IsEnabled = true;
+            }
+            else
+            {
+                ResButton.IsEnabled = false;
+            }
+        }
     }
 }

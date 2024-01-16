@@ -32,5 +32,17 @@ namespace lab_final_attempt2.View.UserControls
             double sum = point1 + point2;
             ResText.Text = "Результат: " + sum;
         }
+
+        private void SelPoint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (SelPoint1.SelectedItem != null && SelPoint2.SelectedItem != null)
+            {
+                ResButton.IsEnabled = true;
+            }
+            else
+            {
+                ResButton.IsEnabled = false;
+            }
+        }
     }
 }
