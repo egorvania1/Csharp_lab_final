@@ -19,14 +19,24 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock TextAlignment="Center" Text="Расстояние между точками" Grid.ColumnSpan="2"/>
-            <ListBox Name="SelPoint1" ItemsSource="{Binding Source={StaticResource pointsProvider}}" Grid.Row="1" SelectionChanged="SelPoint_SelectionChanged"/>
-            <ListBox Name="SelPoint2" ItemsSource="{Binding Source={StaticResource pointsProvider}}" Grid.Row="1" Grid.Column="2" SelectionChanged="SelPoint_SelectionChanged"/>
-            <Button Name="ResButton" Width="100" Height="50" Content="Вычислить" Grid.Row="2" Click="ResButton_Click" IsEnabled="False"/>
-            <TextBlock Name="ResText" Text="Результат: " Grid.Row="2" Grid.Column="1"/>
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Расстояние между точками" Grid.ColumnSpan="2"/>
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Выберите точку:" Grid.Row="1"/>
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Выберите точку:" Grid.Row="1" Grid.Column="2"/>
+            <ListBox Name="SelPoint1" Margin="5, 5, 5, 5" ItemsSource="{Binding Source={StaticResource pointsProvider}}" Grid.Row="2" SelectionChanged="SelPoint_SelectionChanged"/>
+            <ListBox Name="SelPoint2" Margin="5, 5, 5, 5" ItemsSource="{Binding Source={StaticResource pointsProvider}}" Grid.Row="2" Grid.Column="2" SelectionChanged="SelPoint_SelectionChanged"/>
+            <Button Name="ResButton" Width="100" Height="50" Content="Вычислить" Grid.Row="3" Click="ResButton_Click" IsEnabled="False"/>
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".2*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Результат: " Grid.Row="0"/>
+                <TextBlock Name="ResText" TextAlignment="Center" VerticalAlignment="Center" Text="" Grid.Row="1"/>
+            </Grid>
         </Grid>
     </Border>
 </UserControl>

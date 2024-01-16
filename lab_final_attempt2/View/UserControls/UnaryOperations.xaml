@@ -15,6 +15,7 @@
         <Grid Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.2*"/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -22,10 +23,12 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock TextAlignment="Center" Text="Унарные операции" Grid.ColumnSpan="2"/>
-            <ListBox Name="SelPoint" ItemsSource="{Binding Source={StaticResource pointsProvider}}" Grid.Row="1" Grid.RowSpan="2" SelectionChanged="SelPoint_SelectionChanged"/>
-            <Button Name="PlusButton"  Width="100" Height="50" Content="++" Grid.Row="1" Grid.Column="1" Click="PlusButton_Click" IsEnabled="False"/>
-            <Button Name="MinusButton" Width="100" Height="50" Content="--" Grid.Row="2" Grid.Column="1" Click="MinusButton_Click" IsEnabled="False"/>
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Унарные операции" Grid.ColumnSpan="2"/>
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Выберите точку:" Grid.Row="1"/>
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Выберите операцию:" Grid.Row="1" Grid.Column="1"/>
+            <ListBox Margin="5,5,5,5" Name="SelPoint" ItemsSource="{Binding Source={StaticResource pointsProvider}}" Grid.Row="2" Grid.RowSpan="2" SelectionChanged="SelPoint_SelectionChanged"/>
+            <Button Name="PlusButton"  Width="100" Height="50" Content="++" Grid.Row="2" Grid.Column="1" Click="PlusButton_Click" IsEnabled="False"/>
+            <Button Name="MinusButton" Width="100" Height="50" Content="--" Grid.Row="3" Grid.Column="1" Click="MinusButton_Click" IsEnabled="False"/>
         </Grid>
     </Border>
 </UserControl>

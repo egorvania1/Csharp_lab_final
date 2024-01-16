@@ -19,14 +19,17 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock TextAlignment="Center" Text="Точка + Int" Grid.ColumnSpan="2"/>
-            <ListBox Name="SelPoint" ItemsSource="{Binding Source={StaticResource pointsProvider}}" Grid.Row="1" SelectionChanged="SelPoint_SelectionChanged"/>
-            <TextBox Name="IntInput" Text="Введите число" Grid.Row="1" Grid.Column="1"/>
-            <Button Name="ResButton" Width="100" Height="50" Content="Вычислить" Grid.Row="2" Click="ResButton_Click" IsEnabled="False"/>
-            <TextBlock Name="ResText" Text="Результат: " Grid.Row="2" Grid.Column="1"/>
+            <TextBlock TextAlignment="Center" Text="Выберите точку:" Grid.Row="1"/>
+            <TextBlock TextAlignment="Center" Text="Введите число(Int):" Grid.Row="1" Grid.Column="2"/>
+            <ListBox Name="SelPoint" Margin="5, 5, 5, 5" ItemsSource="{Binding Source={StaticResource pointsProvider}}" Grid.Row="2" SelectionChanged="SelPoint_SelectionChanged"/>
+            <TextBox Name="IntInput" Margin="5, 5, 5, 5" Grid.Row="2" Grid.Column="1"/>
+            <Button Name="ResButton" Width="100" Height="50" Content="Вычислить" Grid.Row="3" Click="ResButton_Click" IsEnabled="False"/>
+            <TextBlock Name="ResText" Text="Результат: " Grid.Row="3" Grid.Column="1"/>
         </Grid>
     </Border>
 </UserControl>
