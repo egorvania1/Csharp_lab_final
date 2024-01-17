@@ -31,7 +31,7 @@ namespace lab_final_attempt2.View.UserControls
         {
             Point point1 = (Point)SelPoint1.SelectedItem; //Берём выбранную точку из листа 1
             Point point2 = (Point)SelPoint2.SelectedItem; //Берём выбранную точку из листа 2
-            double sum = point1 + point2; //Проверка перегрузки Point + Point (выдаёт результат метода Distance)
+            double sum = Math.Round(point1 + point2, 4); //Проверка перегрузки Point + Point (выдаёт результат метода Distance)
             ResText.Text = sum.ToString(); //Вывод результата
         }
 

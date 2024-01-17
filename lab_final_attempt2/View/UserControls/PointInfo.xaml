@@ -23,11 +23,11 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height=".2*"/>
-                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".1*"/>
+                <RowDefinition Height=".1*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Text="Преобразование класса точки" Grid.ColumnSpan="2"/>
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Text="Операции приведения типа" Grid.ColumnSpan="2"/>
             <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Выберите точку:" Grid.Row="1"/>
             <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Преобразование:" Grid.Row="1" Grid.Column="2"/>
             <ListBox Name="SelPoint" Margin="5, 5, 5, 5" ItemsSource="{Binding Source={StaticResource pointsProvider}}" Grid.Row="2" SelectionChanged="SelPoint_SelectionChanged"/>

@@ -31,7 +31,7 @@ namespace lab_final_attempt2.View.UserControls
         {
             Point point1 = (Point)SelPoint1.SelectedItem; //Берём выбранную точку из листа 1
             Point point2 = (Point)SelPoint2.SelectedItem; //Берём выбранную точку из листа 2
-            double distance = point1.Distance(point2); //Проверка метода Distance
+            double distance = Math.Round(point1.Distance(point2), 4); //Проверка метода Distance
             ResText.Text = distance.ToString(); //Вывод результата
         }
 

@@ -56,7 +56,7 @@ namespace lab_final_attempt2
         public MainWindow()
         {
             InitializeComponent();
-            this.Title = "Тестирования методов класса точки (Point)"; //Заголовок окна
+            this.Title = "Тестирования методов и перегрузок класса точки (Point)"; //Заголовок окна
         }
     }
 }
