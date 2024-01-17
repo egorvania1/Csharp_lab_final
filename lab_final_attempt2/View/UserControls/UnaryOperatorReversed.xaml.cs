@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,28 +16,27 @@ using System.Windows.Shapes;
 namespace lab_final_attempt2.View.UserControls
 {
     /// <summary>
-    /// Логика взаимодействия для UnaryOperations.xaml
+    /// Логика взаимодействия для UnaryOperatorReversed.xaml
     /// </summary>
-    public partial class UnaryOperations : UserControl
+    public partial class UnaryOperatorReversed : UserControl
     {
-        public UnaryOperations()
+        public UnaryOperatorReversed()
         {
             InitializeComponent();
         }
-
         private void PlusButton_Click(object sender, RoutedEventArgs e)
         {
             Point point = (Point)SelPoint.SelectedItem;
-            point++;
-            //SelPoint.SelectedItem = point;
+            ++point;
+            SelPoint.SelectedItem = point;
             SelPoint.Items.Refresh();
         }
 
         private void MinusButton_Click(object sender, RoutedEventArgs e)
         {
             Point point = (Point)SelPoint.SelectedItem;
-            point--;
-            //SelPoint.SelectedItem = point;
+            --point;
+            SelPoint.SelectedItem = point;
             SelPoint.Items.Refresh();
         }
 

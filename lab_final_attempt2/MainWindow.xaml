@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:lab_final_attempt2"
         xmlns:userControls="clr-namespace:lab_final_attempt2.View.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="920">
 
     <Window.Resources>
         <ObjectDataProvider x:Key="pointsProvider"
@@ -14,29 +14,21 @@
     </Window.Resources>
 
     <Grid>
+        <!-- Сетка 3 на 2 -->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".2*"/>
-            <ColumnDefinition Width=".8*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
-        <!-- Левая колонка -->
-        <userControls:LeftPanel/>
-
-        <!-- Правая колонка -->
-        <Grid Grid.Column="1">
-            <!-- Сетка 2 на 2 -->
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <userControls:UnaryOperations/>
-            <userControls:PointsDistance Grid.Column="1"/>
-            <userControls:PointsSum Grid.Row="1"/>
-            <userControls:IntPlusPoint Grid.Column="1" Grid.Row="1"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <userControls:PointInfo/>
+        <userControls:UnaryOperations Grid.Column="1"/>
+        <userControls:UnaryOperatorReversed Grid.Column="2"/>
+        <userControls:PointsDistance Grid.Row="1"/>
+        <userControls:PointsSum Grid.Row="1" Grid.Column="1"/>
+        <userControls:IntPlusPoint Grid.Row="1" Grid.Column="2"/>
         </Grid>
-    </Grid>
 </Window>

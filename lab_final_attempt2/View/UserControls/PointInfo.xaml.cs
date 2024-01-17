@@ -19,11 +19,11 @@ using System.Windows.Shapes;
 namespace lab_final_attempt2.View.UserControls
 {
     /// <summary>
-    /// Логика взаимодействия для LeftPanel.xaml
+    /// Логика взаимодействия для PointInfo.xaml
     /// </summary>
-    public partial class LeftPanel : UserControl, INotifyPropertyChanged
+    public partial class PointInfo : UserControl, INotifyPropertyChanged
     {
-        public LeftPanel()
+        public PointInfo()
         {
             DataContext = this;
             InitializeComponent();
@@ -35,8 +35,8 @@ namespace lab_final_attempt2.View.UserControls
         public int X
         {
             get { return x; }
-            set 
-            { 
+            set
+            {
                 x = value;
                 OnPropertyChanged();
             }
@@ -46,14 +46,14 @@ namespace lab_final_attempt2.View.UserControls
         public double Y
         {
             get { return y; }
-            set 
-            { 
+            set
+            {
                 y = value;
                 OnPropertyChanged();
             }
         }
 
-        private void OnPropertyChanged( [CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

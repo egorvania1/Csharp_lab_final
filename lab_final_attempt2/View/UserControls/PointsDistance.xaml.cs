@@ -30,7 +30,7 @@ namespace lab_final_attempt2.View.UserControls
             Point point1 = (Point)SelPoint1.SelectedItem;
             Point point2 = (Point)SelPoint2.SelectedItem;
             double distance = point1.Distance(point2);
-            ResText.Text = "Результат: " + distance;
+            ResText.Text = distance.ToString();
         }
 
         private void SelPoint_SelectionChanged(object sender, SelectionChangedEventArgs e)

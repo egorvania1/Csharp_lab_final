@@ -30,7 +30,7 @@ namespace lab_final_attempt2.View.UserControls
             Point point1 = (Point)SelPoint1.SelectedItem;
             Point point2 = (Point)SelPoint2.SelectedItem;
             double sum = point1 + point2;
-            ResText.Text = "Результат: " + sum;
+            ResText.Text = sum.ToString();
         }
 
         private void SelPoint_SelectionChanged(object sender, SelectionChangedEventArgs e)

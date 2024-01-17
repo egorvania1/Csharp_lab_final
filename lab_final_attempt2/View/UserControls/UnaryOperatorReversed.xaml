@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="lab_final_attempt2.View.UserControls.UnaryOperations"
+﻿<UserControl x:Class="lab_final_attempt2.View.UserControls.UnaryOperatorReversed"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -24,11 +24,11 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Text="Унарные операции" Grid.ColumnSpan="2"/>
-            <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Выберите точку:" Grid.Row="1"/>
-            <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Выберите операцию:" Grid.Row="1" Grid.Column="1"/>
-            <ListBox Margin="5,5,5,5" Name="SelPoint" ItemsSource="{Binding Source={StaticResource pointsProvider}}" Grid.Row="2" Grid.RowSpan="2" SelectionChanged="SelPoint_SelectionChanged"/>
-            <Button Name="PlusButton"  Width="100" Height="50" Content="++" Grid.Row="2" Grid.Column="1" Click="PlusButton_Click" IsEnabled="False"/>
-            <Button Name="MinusButton" Width="100" Height="50" Content="--" Grid.Row="3" Grid.Column="1" Click="MinusButton_Click" IsEnabled="False"/>
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Выберите точку:" Grid.Row="1" Grid.Column="1"/>
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Выберите операцию:" Grid.Row="1"/>
+            <ListBox Margin="5,5,5,5" Name="SelPoint" ItemsSource="{Binding Source={StaticResource pointsProvider}}" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" SelectionChanged="SelPoint_SelectionChanged"/>
+            <Button Name="PlusButton"  Width="100" Height="50" Content="++" Grid.Row="2" Click="PlusButton_Click" IsEnabled="False"/>
+            <Button Name="MinusButton" Width="100" Height="50" Content="--" Grid.Row="3" Click="MinusButton_Click" IsEnabled="False"/>
         </Grid>
     </Border>
 </UserControl>

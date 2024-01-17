@@ -35,18 +35,18 @@ namespace lab_final_attempt2.View.UserControls
                 int number;
                 if (!int.TryParse(IntInput.Text, out number))
                 {
-                    ResText.Text = "Результат: Введён не int";
+                    ResText.Text = "Введён не int";
                 }
                 else
                 {
                     point += number;
                     SelPoint.SelectedItem = point;
-                    ResText.Text = "Результат: " + point;
+                    ResText.Text = point.ToString();
                 }
             }
             else
             {
-                ResText.Text = "Результат: Не выбрана точка";
+                ResText.Text = "Не выбрана точка";
             }
         }
 

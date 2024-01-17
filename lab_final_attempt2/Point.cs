@@ -10,13 +10,9 @@ namespace lab_final_attempt2
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void OnPropertyChanged(string info)
+        private void OnPropertyChanged(string propertyName)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(info));
-            }
+            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
         public double X //Вывод и ввод Х
         {
