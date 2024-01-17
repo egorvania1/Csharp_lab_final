@@ -38,7 +38,7 @@ namespace lab_final_attempt2.View.UserControls
             else
             {
                 point += number; //Проверка перегрузки Point + Int
-                ResText.Text = point.ToString();
+                ResText.Text = point.ToString(); //Выводим результат
             }
         }
 
