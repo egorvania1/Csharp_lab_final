@@ -7,11 +7,16 @@
              xmlns:main="clr-namespace:lab_final_attempt2"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="400">
+    <!-- Импортируем main чтобы получить доступ к коллекции с точками -->
+
+    <!-- Берем данные для ListBox из PointCollection в main -->
+    <!-- MethodName = Метод, с помощью которого будут браться точки в лист -->
     <UserControl.Resources>
         <ObjectDataProvider x:Key="pointsProvider"
             ObjectType="{x:Type main:PointCollection}" MethodName="GetPoints" />
     </UserControl.Resources>
     <Border BorderBrush="Black" BorderThickness="2">
+        <!-- Сетка 4 на 2 -->
         <Grid Background="White">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

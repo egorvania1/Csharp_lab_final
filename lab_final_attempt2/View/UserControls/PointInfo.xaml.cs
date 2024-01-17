@@ -21,15 +21,15 @@ namespace lab_final_attempt2.View.UserControls
     /// <summary>
     /// Логика взаимодействия для PointInfo.xaml
     /// </summary>
-    public partial class PointInfo : UserControl, INotifyPropertyChanged
+    public partial class PointInfo : UserControl, INotifyPropertyChanged  //Возможность предупреждать о изменении
     {
         public PointInfo()
         {
-            DataContext = this;
             InitializeComponent();
+            DataContext = this;
         }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged; //Интерфейс INotifyPropertyChanged
 
         private int x;
         public int X
@@ -38,7 +38,7 @@ namespace lab_final_attempt2.View.UserControls
             set
             {
                 x = value;
-                OnPropertyChanged();
+                OnPropertyChanged(); //Предупредить о изменении x
             }
         }
 
@@ -49,20 +49,23 @@ namespace lab_final_attempt2.View.UserControls
             set
             {
                 y = value;
-                OnPropertyChanged();
+                OnPropertyChanged(); //Предупредить о изменении y
             }
         }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName)); //Обновить элементы управления
         }
 
-        private void SelPoint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SelPoint_SelectionChanged(object sender, SelectionChangedEventArgs e) //Если изменился выбор в листе
         {
-            Point point = (Point)SelPoint.SelectedItem;
-            X = (int)point;
-            Y = point;
+            if (SelPoint.SelectedItem != null) //Если что-то выбрано
+            {
+                Point point = (Point)SelPoint.SelectedItem;
+                X = (int)point;
+                Y = point;
+            }
         }
     }
 }

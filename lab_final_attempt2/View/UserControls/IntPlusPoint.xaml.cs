@@ -27,38 +27,30 @@ namespace lab_final_attempt2.View.UserControls
             InitializeComponent();
         }
 
-        private void ResButton_Click(object sender, RoutedEventArgs e)
+        private void ResButton_Click(object sender, RoutedEventArgs e) //Когда была нажата кнопка
         {
-            if (SelPoint.SelectedItem != null)
+            Point point = (Point)SelPoint.SelectedItem; //Берём выбранную точку
+            int number;
+            if (!int.TryParse(IntInput.Text, out number)) //Пытаемся преобразовать ввод в int
             {
-                Point point = (Point)SelPoint.SelectedItem;
-                int number;
-                if (!int.TryParse(IntInput.Text, out number))
-                {
-                    ResText.Text = "Введён не int";
-                }
-                else
-                {
-                    point += number;
-                    SelPoint.SelectedItem = point;
-                    ResText.Text = point.ToString();
-                }
+                ResText.Text = "Введён не int"; //Если введено не число
             }
             else
             {
-                ResText.Text = "Не выбрана точка";
+                point += number; //Проверка перегрузки Point + Int
+                ResText.Text = point.ToString();
             }
         }
 
-        private void SelPoint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SelPoint_SelectionChanged(object sender, SelectionChangedEventArgs e) //Если изменился выбор в листе
         {
-            if (SelPoint.SelectedItem != null)
+            if (SelPoint.SelectedItem != null) //Если что-то выбрано
             {
-                ResButton.IsEnabled = true;
+                ResButton.IsEnabled = true; //то включить кнопку
             }
             else
             {
-                ResButton.IsEnabled = false;
+                ResButton.IsEnabled = false; //Если ничего не выбрано, то выключить кнопку
             }
         }
     }

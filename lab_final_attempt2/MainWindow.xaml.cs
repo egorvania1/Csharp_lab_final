@@ -17,19 +17,10 @@ namespace lab_final_attempt2
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
+    //Класс с коллекцией из точек для ListBox
     public class PointCollection
     {
-        public class Employee
-        {
-            public string Name { get; set; }
-            public string SurName { get; set; }
-            public Employee(string name, string surName)
-            {
-                this.Name = name;
-                this.SurName = surName;
-            }
-        }
-
         private ObservableCollection<Point> points;
         public ObservableCollection<Point> Points
         {
@@ -37,6 +28,7 @@ namespace lab_final_attempt2
             set { points = value; }
         }
 
+        //Коллекция из точек
         public PointCollection()
         {
             points = new ObservableCollection<Point>
@@ -52,6 +44,7 @@ namespace lab_final_attempt2
                 new Point(3, -3),
             };
         }
+
         public ObservableCollection<Point> GetPoints()
         {
             return points;
@@ -63,7 +56,7 @@ namespace lab_final_attempt2
         public MainWindow()
         {
             InitializeComponent();
-            this.Title = "Тестирования методов класса точки (Point)";
+            this.Title = "Тестирования методов класса точки (Point)"; //Заголовок окна
         }
     }
 }

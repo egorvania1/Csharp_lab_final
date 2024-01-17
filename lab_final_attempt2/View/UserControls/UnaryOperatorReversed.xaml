@@ -7,6 +7,10 @@
              xmlns:main="clr-namespace:lab_final_attempt2"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="400">
+    <!-- Импортируем main чтобы получить доступ к коллекции с точками -->
+
+    <!-- Берем данные для ListBox из PointCollection в main -->
+    <!-- MethodName = Метод, с помощью которого будут браться точки в лист -->
     <UserControl.Resources>
         <ObjectDataProvider x:Key="pointsProvider"
             ObjectType="{x:Type main:PointCollection}" MethodName="GetPoints" />
@@ -14,6 +18,7 @@
     <Border BorderBrush="Black" BorderThickness="2">
         <Grid Background="White">
             <Grid.RowDefinitions>
+                <!-- Сетка 4 на 2 -->
                 <RowDefinition Height="0.2*"/>
                 <RowDefinition Height="0.2*"/>
                 <RowDefinition/>
@@ -23,7 +28,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Text="Унарные операции" Grid.ColumnSpan="2"/>
+            <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Text="Унарные операции (Левосторонние)" Grid.ColumnSpan="2"/>
             <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Выберите точку:" Grid.Row="1" Grid.Column="1"/>
             <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="Выберите операцию:" Grid.Row="1"/>
             <ListBox Margin="5,5,5,5" Name="SelPoint" ItemsSource="{Binding Source={StaticResource pointsProvider}}" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" SelectionChanged="SelPoint_SelectionChanged"/>

@@ -7,7 +7,10 @@
         xmlns:userControls="clr-namespace:lab_final_attempt2.View.UserControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="920">
+    <!-- Импортируем элементы управления из userControls-->
 
+    <!-- Берем данные для ListBox из PointCollection в коде -->
+    <!-- MethodName = Метод, с помощью которого будут браться точки в лист -->
     <Window.Resources>
         <ObjectDataProvider x:Key="pointsProvider"
             ObjectType="{x:Type local:PointCollection}" MethodName="GetPoints" />
@@ -24,6 +27,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <!-- Элементы управления (Находятся в папке UserControls) -->
         <userControls:PointInfo/>
         <userControls:UnaryOperations Grid.Column="1"/>
         <userControls:UnaryOperatorReversed Grid.Column="2"/>

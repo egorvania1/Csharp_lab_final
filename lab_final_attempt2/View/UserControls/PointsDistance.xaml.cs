@@ -18,6 +18,8 @@ namespace lab_final_attempt2.View.UserControls
     /// <summary>
     /// Логика взаимодействия для PointsDistance.xaml
     /// </summary>
+
+    //Код как в PointsSum, но с методом Distance
     public partial class PointsDistance : UserControl
     {
         public PointsDistance()
@@ -25,23 +27,23 @@ namespace lab_final_attempt2.View.UserControls
             InitializeComponent();
         }
 
-        private void ResButton_Click(object sender, RoutedEventArgs e)
+        private void ResButton_Click(object sender, RoutedEventArgs e) //Когда была нажата кнопка
         {
-            Point point1 = (Point)SelPoint1.SelectedItem;
-            Point point2 = (Point)SelPoint2.SelectedItem;
-            double distance = point1.Distance(point2);
-            ResText.Text = distance.ToString();
+            Point point1 = (Point)SelPoint1.SelectedItem; //Берём выбранную точку из листа 1
+            Point point2 = (Point)SelPoint2.SelectedItem; //Берём выбранную точку из листа 2
+            double distance = point1.Distance(point2); //Проверка метода Distance
+            ResText.Text = distance.ToString(); //Вывод результата
         }
 
-        private void SelPoint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SelPoint_SelectionChanged(object sender, SelectionChangedEventArgs e) //Если изменился выбор в каком-то листе
         {
-            if (SelPoint1.SelectedItem != null && SelPoint2.SelectedItem != null)
+            if (SelPoint1.SelectedItem != null && SelPoint2.SelectedItem != null) //Если в обеих ListBox что-то выбрано
             {
-                ResButton.IsEnabled = true;
+                ResButton.IsEnabled = true; //то включить кнопку
             }
             else
             {
-                ResButton.IsEnabled = false;
+                ResButton.IsEnabled = false;//Если хоть в одном ничего не выбрано, то выключить кнопку
             }
         }
     }

@@ -20,6 +20,9 @@ namespace lab_final_attempt2.View.UserControls
     /// <summary>
     /// Логика взаимодействия для UnaryOperations.xaml
     /// </summary>
+
+    //Код как в UnaryOperatorReversed, но операторы ++ и -- стоят слева
+    //(Почему я не назвал тот его UnaryOperationsReversed)
     public partial class UnaryOperations : UserControl
     {
         public UnaryOperations()
@@ -27,32 +30,32 @@ namespace lab_final_attempt2.View.UserControls
             InitializeComponent();
         }
 
-        private void PlusButton_Click(object sender, RoutedEventArgs e)
+        private void PlusButton_Click(object sender, RoutedEventArgs e) //Когда нажата кнопка ++
         {
-            Point point = (Point)SelPoint.SelectedItem;
-            point++;
-            //SelPoint.SelectedItem = point;
-            SelPoint.Items.Refresh();
+            Point point = (Point)SelPoint.SelectedItem; //Берём выбранную точку
+            point++; //Проверка перегрузки ++ (правосторонняя)
+            SelPoint.SelectedItem = point; //Замещаем точку получившийся (Почему-то работает и без этого. Достаточно обновить список. ПОЧЕМУ?)
+            SelPoint.Items.Refresh(); //Обновляем список
         }
 
-        private void MinusButton_Click(object sender, RoutedEventArgs e)
+        private void MinusButton_Click(object sender, RoutedEventArgs e) //Когда нажата кнопка --
         {
-            Point point = (Point)SelPoint.SelectedItem;
-            point--;
-            //SelPoint.SelectedItem = point;
-            SelPoint.Items.Refresh();
+            Point point = (Point)SelPoint.SelectedItem; //Берём выбранную точку
+            point--; //Проверка перегрузки -- (правосторонняя)
+            SelPoint.SelectedItem = point; //Замещаем точку получившийся (Почему-то работает и без этого. Достаточно обновить список. ПОЧЕМУ?)
+            SelPoint.Items.Refresh(); //Обновляем список
         }
 
-        private void SelPoint_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SelPoint_SelectionChanged(object sender, SelectionChangedEventArgs e) //Если изменился выбор в листе
         {
-            if (SelPoint.SelectedItem != null)
+            if (SelPoint.SelectedItem != null) //Если что-то выбрано
             {
-                PlusButton.IsEnabled = true;
+                PlusButton.IsEnabled = true; //то включить кнопки
                 MinusButton.IsEnabled = true;
             }
             else
             {
-                PlusButton.IsEnabled = false;
+                PlusButton.IsEnabled = false; //Если ничего не выбрано, то выключить кнопки
                 MinusButton.IsEnabled = false;
             }
         }
